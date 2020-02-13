@@ -150,8 +150,8 @@ void main(void) {
     // Timer 1 used for strobe
     TMR1H = T1_REL_H;  // high byte
     TMR1L = T1_REL_L;  // low byte
-    T1CLK = 0b0001;    // Fosc/4.  Would be nice to have 0b0100 LFINTOSC 31kHz
-    T1CON = (0b11 << _T1CON_CKPS_POSN) // 1:8 prescale
+    T1CLK = 0b0100;    // LFINTOSC 31kHz
+    T1CON = (0b00 << _T1CON_CKPS_POSN) // 1:1 prescale
           | _T1CON_nSYNC_MASK          // Asynchronous
           // _T1CON_RD16_MASK          // 8-bit separate writes
           | _T1CON_ON_MASK;            // Timer on

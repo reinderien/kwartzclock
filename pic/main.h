@@ -63,15 +63,11 @@
 #define T0_REL_L ((uint8_t)(T0_REL & 0xFF))
 
 // Timer 1 for strobe:
-// Use Fosc/4=8MHz, prescale=8
-// timer ticks = -Fosc/4/8/7kHz ~ -143
-// actual freq = Fosc/4/8/143 = 6.993kHz
-//     This clock doesn't tick in the simulator:
-//     Use LFINTOSC=31kHz, prescale=4
-//     timer ticks = -LFINTOSC/pre/7kHz ~ -1
-//     actual freq = LFINTOSC/4/1 = 7.75kHz
+// Use LFINTOSC=31kHz, prescale=1
+// timer ticks = -LFINTOSC/pre/7kHz ~ -4
+// actual freq = LFINTOSC/4/1 = 7.75kHz
 // Timer 1 reload 16-bit value
-#define T1_REL ((uint16_t)-130)
+#define T1_REL ((uint16_t)-4)
 // High byte
 #define T1_REL_H ((uint8_t)(T1_REL >> 8))
 // Low byte
