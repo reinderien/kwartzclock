@@ -179,17 +179,15 @@ void main(void) {
             // Shift register clock line just saw a rising edge
             // Load data for the current segment of all four digits
             LATC = seg_data[seg_index];
-
-            if (seg_index) {
+            
+            if (++seg_index >= 7) {
                 SR_DATA = 0;
-                seg_index--;
-            }
-            else {
-                // High on shift register data line only if we're on the first index
-                SR_DATA = 1;
-                seg_index = 6;
+                seg_index = 0;
             }
             
+            // High on shift register data line only if we're on the first index
+            SR_DATA = !seg_index;
+
             strobe = 0;
         }
         
