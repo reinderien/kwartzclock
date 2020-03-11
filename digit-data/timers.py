@@ -1,13 +1,10 @@
-import math
-
-
 def timer0():
     f_sources = (
         31.00e3,      # LFINTOSC
         31.25e3,      # MFINTOSC
        500.00e3,      # MFINTOSC
-        32.00e6 / 4,  # FOSC/4
-        32.00e6,      # FOSC
+         8.00e6 / 4,  # FOSC/4
+         8.00e6,      # FOSC
     )
 
     f_target = 1/60
@@ -29,9 +26,10 @@ def timer0():
                 err = f_act / f_target - 1
                 if abs(err) < epsilon:
                     print(f'{f_source}\t{pre_factor}\t{post_factor}\t{timer}\t{err}')
+    print()
 
 
-# timer0()
+timer0()
 
 
 def timer1():

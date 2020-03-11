@@ -140,9 +140,9 @@ void main(void) {
     // Timer 0 used for clock minutes
     TMR0H = T0_REL_H;  // high byte reload
     TMR0L = T0_REL_L;  // low byte reload
-    T0CON1 = (0b100 << _T0CON1_T0CS_POSN)      // LFINTOSC
+    T0CON1 = (0b010 << _T0CON1_T0CS_POSN)      // Fosc/4
            | _T0CON1_T0ASYNC_MASK              // Asynchronous
-           | (0b0101 << _T0CON1_T0CKPS_POSN);  // 1:32 prescale
+           | (0b1001 << _T0CON1_T0CKPS_POSN);  // 1:512 prescale
     T0CON0 = _T0CON0_T0EN_MASK                 // Timer on
            | _T0CON0_T016BIT_MASK              // 16-bit
            | (0b1110 << _T0CON0_T0OUTPS_POSN); // 1:15 postscale

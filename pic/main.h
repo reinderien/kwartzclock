@@ -50,13 +50,15 @@
 #define ANODES   LATC
 
 // Timer 0 for clock:
-// Use LFINTOSC=31kHz, prescale=32, postscale=15
+// Could use LFINTOSC=31kHz, prescale=32, postscale=15
 // timer ticks = -LFINTOSC/pre/post * 60s = -3875
-//      If LFINTOSC proves too inaccurate, then
-//      Fosc/4=8MHz, prescale=2048, postscale=15
-//      timer ticks = -Fosc/4/pre/post * 60s = -15625
+
+// LFINTOSC may prove too inaccurate, so
+// Fosc=8MHz
+// Fosc/4, prescale=512, postscale=15
+// timer ticks = -Fosc/4/pre/post * 60s = -15625
 // Timer 0 reload 16-bit value
-#define T0_REL ((uint16_t)-3875)
+#define T0_REL ((uint16_t)-15625)
 // High byte
 #define T0_REL_H ((uint8_t)(T0_REL >> 8))
 // Low byte
