@@ -1,7 +1,12 @@
+"""
+Show some options for timer 0 (clock) and timer 1 (display strobe) configuration.
+The PIC16LF15323 describes these in chapters 25-26.
+"""
+
+
 def timer0():
     f_sources = (
         31.00e3,      # LFINTOSC
-        31.25e3,      # MFINTOSC
        500.00e3,      # MFINTOSC
          8.00e6 / 4,  # FOSC/4
          8.00e6,      # FOSC
@@ -15,6 +20,8 @@ def timer0():
     t_max = 2**16
     epsilon = 1e-8
 
+    print(f'{"f_source":>10}\t{"pre":>4}\t{"post":>5}\t{"timer"}\t{"err"}')
+
     for f_source in f_sources:
         for pre_factor in pre_factors:
             for post_factor in post_factors:
@@ -25,7 +32,7 @@ def timer0():
                 f_act = f_adj / timer
                 err = f_act / f_target - 1
                 if abs(err) < epsilon:
-                    print(f'{f_source}\t{pre_factor}\t{post_factor}\t{timer}\t{err}')
+                    print(f'{f_source:10}\t{pre_factor:4}\t{post_factor:5}\t{timer}\t{err}')
     print()
 
 
@@ -48,6 +55,8 @@ def timer1():
     t_max = 2**16
     epsilon = 0.2
 
+    print(f'{"f_source":>10}\t{"pre":>4}\t{"timer"}\t{"err":>8}')
+
     for f_source in f_sources:
         for pre_factor in pre_factors:
             f_adj = f_source / pre_factor
@@ -57,7 +66,7 @@ def timer1():
             f_act = f_adj / timer
             err = f_act / f_target - 1
             if abs(err) < epsilon:
-                print(f'{f_source}\t{pre_factor}\t{timer}\t{err}')
+                print(f'{f_source:10}\t{pre_factor:4}\t{timer:5}\t{err:8.1e}')
 
 
 timer1()
