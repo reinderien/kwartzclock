@@ -37,8 +37,8 @@ def timer1():
         31.00e3,      # LFINTOSC
         32.00e3,      # MFINTOSC
        500.00e3,      # MFINTOSC
-        32.00e6 / 4,  # FOSC/4
-        32.00e6,      # FOSC
+         8.00e6 / 4,  # FOSC/4
+         8.00e6,      # FOSC
     )
 
     f_target = 500 * 14  # 14 pulses per strobe sequence
