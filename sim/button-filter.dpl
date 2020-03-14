@@ -1,0 +1,31 @@
+<Qucs Schematic 0.0.19>
+<Properties>
+  <View=-112,0,1420,1558,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=button-filter.dat>
+  <DataDisplay=button-filter.sch>
+  <OpenDisplay=1>
+  <Script=button-filter.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 180 778 947 718 3 #c0c0c0 1 00 1 0.019 0.0001 0.022 1 -0.33 0.5 3.63 1 -1 0.2 1 315 0 225 "time" "" "">
+	<"Vsw.Vt" #0000ff 0 3 0 0 0>
+	<"Vin.Vt" #ff0000 0 3 0 0 0>
+	<"Vfilt.Vt" #ff00ff 0 3 0 0 0>
+	<"Vint.Vt" #00ff00 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
